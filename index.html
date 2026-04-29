@@ -1769,28 +1769,46 @@
         .td-page .po-pt thead th.col-dieukien.ct-lv4 { background: #128c5e; }
         .td-page .po-pt thead th.col-dieukien.ct-lv5 { background: #0e9b63; }
         /* === Body cell tinting by nature for po-pt === */
-        .td-page .po-pt tbody td.ct-dieukien { background: #f0faf6 !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv1 { background: #e8f7f1 !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv2 { background: #e0f4ec !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv3 { background: #d8f1e7 !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv4 { background: #d0eee2 !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv5 { background: #c8ebdd !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-thuong { background: #fffcf0 !important; color: #92400e !important; }
-        .td-page .po-pt tbody td.ct-thuong-lv1 { background: #fff9e6 !important; color: #92400e !important; }
-        .td-page .po-pt tbody td.ct-thuong-lv2 { background: #fff6dc !important; color: #92400e !important; }
-        .td-page .po-pt tbody td.ct-percent { background: #faf7ff !important; color: #7c3aed !important; }
-        .td-page .po-pt tbody td.ct-count { background: #f0f8ff !important; color: #1e40af !important; }
-        .td-page .po-pt tbody td.ct-count-lv1 { background: #e8f3ff !important; color: #1e40af !important; }
-        .td-page .po-pt tbody td.ct-data { background: #f6f9ff !important; color: #1e3a5f !important; }
-        .td-page .po-pt tbody td.ct-data-lv1 { background: #eef4ff !important; color: #1e3a5f !important; }
-        .td-page .po-pt tbody td.ct-luyke { background: #fffcf0 !important; color: #92400e !important; }
-        .td-page .po-pt tbody td.ct-luyke-lv1 { background: #fff9e6 !important; color: #92400e !important; }
+        /* ct-dieukien (green family) */
+        .td-page .po-pt tbody td.ct-dieukien { background: #e0f7ef !important; color: #065f46 !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv1 { background: #d0f0e4 !important; color: #065f46 !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv2 { background: #c0e9d9 !important; color: #065f46 !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv3 { background: #b0e2ce !important; color: #065f46 !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv4 { background: #a0dbc3 !important; color: #065f46 !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv5 { background: #90d4b8 !important; color: #065f46 !important; }
+        /* ct-thuong (gold family) */
+        .td-page .po-pt tbody td.ct-thuong { background: #fff3cd !important; color: #92400e !important; }
+        .td-page .po-pt tbody td.ct-thuong-lv1 { background: #ffecb3 !important; color: #92400e !important; }
+        /* ct-percent (purple family) */
+        .td-page .po-pt tbody td.ct-percent { background: #ede9fe !important; color: #7c3aed !important; }
+        /* ct-count (blue family) */
+        .td-page .po-pt tbody td.ct-count { background: #dbeafe !important; color: #1e40af !important; }
+        .td-page .po-pt tbody td.ct-count-lv1 { background: #cfe2ff !important; color: #1e40af !important; }
+        /* ct-data (default data - most visible) */
+        .td-page .po-pt tbody td.ct-data { background: #dbeafe !important; color: #1e3a5f !important; }
+        .td-page .po-pt tbody td.ct-data-lv1 { background: #cfe2ff !important; color: #1e3a5f !important; }
+        /* ct-luyke (gold family) */
+        .td-page .po-pt tbody td.ct-luyke { background: #fff3cd !important; color: #92400e !important; }
+        .td-page .po-pt tbody td.ct-luyke-lv1 { background: #ffecb3 !important; color: #92400e !important; }
         /* === THƯỞNG cell cho po === */
         .td-page .po-pt .thuong-val {
             font-weight: 900; color: #1d4ed8; white-space: nowrap;
         }
         .td-page .po-pt .thuong-val i {
             color: #f59e0b; font-size: .58rem; margin-right: 2px; vertical-align: middle; line-height: 1;
+        }
+        /* === Shared THƯỞNG styling for TL and TN tables === */
+        .td-page .policy-tl .thuong-val {
+            font-weight: 900; color: #1d4ed8; white-space: nowrap; font-size: .44rem;
+        }
+        .td-page .policy-tl .thuong-val i {
+            color: #f59e0b; font-size: .5rem; margin-right: 2px; vertical-align: middle; line-height: 1;
+        }
+        .td-page .tn-table .thuong-val {
+            font-weight: 900; color: #1d4ed8; white-space: nowrap; font-size: .42rem;
+        }
+        .td-page .tn-table .thuong-val i {
+            color: #f59e0b; font-size: .48rem; margin-right: 2px; vertical-align: middle; line-height: 1;
         }
         .td-page .po-pt td.col-thuong-cell {
             background: #eff6ff !important; color: #1d4ed8 !important; font-weight: 900;
@@ -1812,7 +1830,7 @@
         .td-page .po-ptw.po-auto-wide .po-pt thead th { padding: 6px 6px; }
         .td-page .po-ptw.po-auto-wide .po-pt tbody td { padding: 5px 6px; }
         /* Policy: center + tinted color for columns 5+ */
-        .td-page .po-pt tbody td.po-cc { text-align: center !important; background: #f6f9ff !important; color: #1e3a5f !important; }
+        .td-page .po-pt tbody td.po-cc { text-align: center !important; }
         .td-page .po-pt tbody td.po-cc.num-col { background: #f0f8ff !important; color: #1e40af !important; }
         .td-page .po-pt tbody td.po-cc.col-thuong { background: #fffcf0 !important; color: #92400e !important; }
         .td-page .po-pt tbody td.po-cc.col-dieukien { background: #f2fdf8 !important; color: #065f46 !important; }
@@ -1834,15 +1852,15 @@
         .td-page .policy-tl tbody tr:hover td { background: #e0f2fe !important; }
         .td-page .policy-tl tbody tr:hover td.tl-role { background: #dbeafe !important; }
         .td-page .policy-tl tbody tr:hover td.tl-count { background: #dbeafe !important; }
-        .td-page .policy-tl tbody tr:hover td.tl-reward { background: #fef9c3 !important; }
+        .td-page .policy-tl tbody tr:hover td.tl-reward { background: #dbeafe !important; }
         .td-page .policy-tl tbody tr:nth-child(even) td { background: #eef4f8; }
         .td-page .policy-tl tbody tr.is-focus td { background: #bfdbfe !important; color: #1e3a5f !important; }
         .td-page .policy-tl tbody tr.is-focus td.tl-role { background: #dbeafe !important; }
         .td-page .policy-tl tbody tr.is-focus td.tl-count { background: #dbeafe !important; }
-        .td-page .policy-tl tbody tr.is-focus td.tl-reward { background: #fef9c3 !important; color: #92400e !important; }
+        .td-page .policy-tl tbody tr.is-focus td.tl-reward { background: #dbeafe !important; color: #1d4ed8 !important; }
         .td-page .policy-tl td.tl-role { background: #f6f9ff !important; color: #1e3a5f !important; text-align: center; }
         .td-page .policy-tl td.tl-count { background: #f0f8ff !important; color: #1e40af !important; text-align: center; }
-        .td-page .policy-tl td.tl-reward { background: #fffcf0 !important; color: #92400e !important; text-align: center; }
+        .td-page .policy-tl td.tl-reward { background: #eff6ff !important; color: #1d4ed8; text-align: center; font-weight: 900; }
         .td-page .policy-tl td.tl-name { text-align: left; }
         .td-page .policy-tl .tl-reward-title { display: block; font-size: .54rem; line-height: 1.05; }
         .td-page .policy-tl .tl-reward-note { display: block; margin-top: 4px; color: #ffe95d; font-size: .34rem; font-weight: 900; line-height: 1.25; text-transform: none; }
@@ -2055,11 +2073,11 @@
         }
         .td-page .tn-table tbody tr:nth-child(even) td.tn-d-lk { background: #fef3c7 !important; }
         /* Reward cells */
-        .td-page .tn-table tbody td.tn-d-thuong {
-            background: #fff8e1 !important; color: #8b6914; font-weight: 800;
+        .td-page .tn-table tbody td.tn-d-thuangr {
+            background: #eff6ff !important; color: #1d4ed8; font-weight: 900;
         }
         .td-page .tn-table tbody td.tn-d-bkip {
-            background: #fff3cd !important; color: #b8860b; font-weight: 800;
+            background: #eff6ff !important; color: #1d4ed8; font-weight: 900;
         }
         /* Active row */
         .td-page .tn-table tbody tr.is-focus td { background: #b3ccff !important; color: #001a33 !important; }
@@ -2143,22 +2161,22 @@
         .td-page .pt td.cell-percent { color: #dc2626 !important; font-weight: 900 !important; text-align: center; }
         .td-page .pt td.cell-percent.neg { color: #991b1b !important; }
         /* === Body cell tinting by nature group === */
-        .td-page .pt tbody td.ct-dieukien { background: #f0faf6 !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv1 { background: #e8f7f1 !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv2 { background: #e0f4ec !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv3 { background: #d8f1e7 !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv4 { background: #d0eee2 !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv5 { background: #c8ebdd !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-thuong { background: #fffcf0 !important; color: #92400e !important; }
-        .td-page .pt tbody td.ct-thuong-lv1 { background: #fff9e6 !important; color: #92400e !important; }
-        .td-page .pt tbody td.ct-thuong-lv2 { background: #fff6dc !important; color: #92400e !important; }
-        .td-page .pt tbody td.ct-percent { background: #faf7ff !important; color: #7c3aed !important; }
-        .td-page .pt tbody td.ct-count { background: #f0f8ff !important; color: #1e40af !important; }
-        .td-page .pt tbody td.ct-count-lv1 { background: #e8f3ff !important; color: #1e40af !important; }
-        .td-page .pt tbody td.ct-data { background: #f6f9ff !important; color: #1e3a5f !important; }
-        .td-page .pt tbody td.ct-data-lv1 { background: #eef4ff !important; color: #1e3a5f !important; }
-        .td-page .pt tbody td.ct-luyke { background: #fffcf0 !important; color: #92400e !important; }
-        .td-page .pt tbody td.ct-luyke-lv1 { background: #fff9e6 !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-dieukien { background: #e0f7ef !important; color: #065f46 !important; }
+        .td-page .pt tbody td.ct-dieukien-lv1 { background: #d0f0e4 !important; color: #065f46 !important; }
+        .td-page .pt tbody td.ct-dieukien-lv2 { background: #c0e9d9 !important; color: #065f46 !important; }
+        .td-page .pt tbody td.ct-dieukien-lv3 { background: #b0e2ce !important; color: #065f46 !important; }
+        .td-page .pt tbody td.ct-dieukien-lv4 { background: #a0dbc3 !important; color: #065f46 !important; }
+        .td-page .pt tbody td.ct-dieukien-lv5 { background: #90d4b8 !important; color: #065f46 !important; }
+        .td-page .pt tbody td.ct-thuong { background: #fff3cd !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-thuong-lv1 { background: #ffecb3 !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-thuong-lv2 { background: #ffe099 !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-percent { background: #ede9fe !important; color: #7c3aed !important; }
+        .td-page .pt tbody td.ct-count { background: #dbeafe !important; color: #1e40af !important; }
+        .td-page .pt tbody td.ct-count-lv1 { background: #cfe2ff !important; color: #1e40af !important; }
+        .td-page .pt tbody td.ct-data { background: #dbeafe !important; color: #1e3a5f !important; }
+        .td-page .pt tbody td.ct-data-lv1 { background: #cfe2ff !important; color: #1e3a5f !important; }
+        .td-page .pt tbody td.ct-luyke { background: #fff3cd !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-luyke-lv1 { background: #ffecb3 !important; color: #92400e !important; }
         /* === THƯỞNG cell: icon + bold + xanh dương === */
         .td-page .pt .thuong-val {
             font-weight: 900;
@@ -4100,7 +4118,7 @@
                     '<td class="tl-name">' + esc(String(r[2] || '').trim()) + '</td>' +
                     '<td class="tl-role">' + esc(String(r[3] || '').trim()) + '</td>' +
                     '<td class="tl-count">' + esc(String(r[4] || '').trim()) + '</td>' +
-                    '<td class="tl-reward">' + esc(reward ? Number(reward.replace(/\./g, '').replace(',', '.')).toLocaleString('vi-VN') : '') + '</td>' +
+                    '<td class="tl-reward">' + (reward ? '<span class="thuong-val"><i class="fa-solid fa-trophy"></i> ' + esc(Number(reward.replace(/\./g, '').replace(',', '.')).toLocaleString('vi-VN')) + '</span>' : '') + '</td>' +
                     '</tr>';
             });
             html += '</tbody></table></div>';
@@ -4212,6 +4230,12 @@
                     if (!s) return false;
                     return /^-?\d+(?:[.,]\d+)?$/.test(s.replace(/\s/g, ''));
                 }
+                /* Helper: reward cell with trophy icon */
+                function tnRewardCell(v, extra) {
+                    var val = fv(v);
+                    if (!val) return '<td class="' + extra + '"></td>';
+                    return '<td class="' + extra + '"><span class="thuong-val"><i class="fa-solid fa-trophy"></i> ' + esc(val) + '</span></td>';
+                }
                 /* Helper: wrap cell with numeric class if applicable */
                 function nc(v, extra) {
                     var val = fv(v);
@@ -4234,12 +4258,12 @@
                     nc(r[9]) +
                     nc(r[10]) +
                     nc(r[11]) +
-                    nc(r[12], 'tn-d-thuangr') +
-                    nc(r[13], 'tn-d-thuangr') +
+                    tnRewardCell(r[12], 'tn-d-thuangr') +
+                    tnRewardCell(r[13], 'tn-d-thuangr') +
                     nc(r[14], 'tn-d-lk') +
                     nc(r[15], 'tn-d-lk') +
                     nc(r[16], 'tn-d-lk') +
-                    nc(r[17], 'tn-d-bkip') +
+                    tnRewardCell(r[17], 'tn-d-bkip') +
                     '</tr>';
             });
 
@@ -4957,6 +4981,7 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                     else break;
                 }
 
+                var isPolicy = cfg.prefix === 'po';
                 var si = [];
                 for (var r = 0; r < dr; r++) si.push(r);
                 si.sort(function(a, b) { return TD_ced(data[b] || [], dc) - TD_ced(data[a] || [], dc); });
@@ -5002,13 +5027,12 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                         /* Negative value highlight for percent columns */
                         if (/cell-percent/.test(cCls) && /^-/.test(String(displayVal).trim())) cCls += ' neg';
                         /* Policy columns 3+ get po-cc */
-                        if (isPolicy && c >= 3) cCls += ' po-cc';
+                        if (isPolicy && c >= infoColCount) cCls += ' po-cc';
                         b += '<td class="' + cCls + '">' + cellContent + '</td>';
                     }
                     b += '</tr>';
                 }
 
-                var isPolicy = cfg.prefix === 'po';
                 var shouldAutoWide = dc <= 10;
                 var wrapCls = isPolicy ? 'po-ptw' + (shouldAutoWide ? ' po-auto-wide' : '') : 'ptw' + (shouldAutoWide ? ' auto-wide' : '');
                 var tblCls = isPolicy ? 'po-pt' : 'pt';

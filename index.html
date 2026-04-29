@@ -858,7 +858,7 @@
             width: 24px;
             color: #2c3e50;
         }
-        .ad-team-table td. month {
+        .ad-team-table td.month {
             font-family: Tahoma, Arial, Helvetica, sans-serif;
             font-weight: 600;
             text-align: center;
@@ -866,13 +866,13 @@
             padding-left: 1px;
             padding-right: 1px;
         }
-        .ad-team-table td .month.has-val,
+        .ad-team-table td.month.has-val,
         .ad-team-table tbody tr:nth-child(even) td.month.has-val {
             background: rgba(255, 153, 51, 0.22) !important;
             color: #b8540a;
             font-weight: 700;
         }
-        .ad-team-table tbody tr hover td. month.has-val {
+        .ad-team-table tbody tr:hover td.month.has-val {
             background: rgba(255, 153, 51, 0.38) !important;
         }
         .ad-team-table { table-layout: fixed; }
@@ -1640,9 +1640,9 @@
         .td-page .ca-btn.edt:hover { background: var(--td-accent); color: var(--td-bg); border-color: var(--td-accent); }
 
         /* Modals */
-        .td-page .pop-bg { position: fixed; inset: 0; z-index: 800; background: #000000d9; backdrop-filter: blur(10px); opacity: 0; visibility: hidden; transition: all .35s; overflow: auto; }
+        .td-page .pop-bg { position: fixed; inset: 0; z-index: 800; background: #000000d9; backdrop-filter: blur(10px); opacity: 0; visibility: hidden; transition: all .35s; overflow: hidden; }
         .td-page .pop-bg.open { opacity: 1; visibility: visible; }
-        .td-page .pop-box { position: relative; max-width: 980px; margin: 18px auto; width: 94%; background: var(--td-bg2); border: 1px solid var(--td-border); border-radius: 0; overflow: visible; transform: translateY(30px) scale(.97); transition: all .4s cubic-bezier(.16,1,.3,1); box-shadow: 0 30px 80px #00000099; display: flex; flex-direction: column; }
+        .td-page .pop-box { position: relative; max-width: 980px; margin: 18px auto; width: 94%; max-height: calc(100vh - 24px); background: var(--td-bg2); border: 1px solid var(--td-border); border-radius: 0; overflow: hidden; transform: translateY(30px) scale(.97); transition: all .4s cubic-bezier(.16,1,.3,1); box-shadow: 0 30px 80px #00000099; display: flex; flex-direction: column; }
         .td-page .pop-bg.open .pop-box { transform: none; }
         .td-page .pop-back { position: absolute; top: 14px; left: 14px; z-index: 10; width: 38px; height: 38px; border-radius: 50%; background: #00000073; backdrop-filter: blur(8px); border: 1px solid #ffffff1a; color: #ffffffcc; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: .95rem; transition: all .2s; }
         .td-page .pop-back:hover { background: #000000b3; color: #fff; border-color: #ffffff40; }
@@ -1652,7 +1652,8 @@
         .td-page .pop-poster { object-fit: cover; }
         .td-page .pop-ph { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0c2240, var(--td-bg)); color: var(--td-fgm); }
         .td-page .pop-bar {
-            position: relative;
+            position: sticky;
+            top: 0;
             z-index: 10;
             padding: 14px 18px 16px;
             display: flex;
@@ -1673,7 +1674,7 @@
         .td-page .pop-meta { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; align-items: flex-start; }
         .td-page .pop-bar .tag, .td-page .pop-bar p { font-size: .74rem; color: #d6e3ef; text-shadow: none; margin: 0; }
         .td-page .pop-subline { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid #ffffff12; background: #08132196; color: #e4eef7; border-radius: 10px; line-height: 1.45; flex-wrap: wrap; }
-        .td-page .pop-ct { padding: 0; flex: 1 1 auto; overflow: visible; }
+        .td-page .pop-ct { padding: 0; flex: 1 1 auto; min-height: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
         .td-page .pop-ct .ptw { }
         .td-page .pop-ct > .ptw + .ptw,
         .td-page .pop-ct > .po-ptw + .po-ptw,
@@ -1721,7 +1722,7 @@
             line-height: 1.3;
         }
         .td-page .po-section-title i { margin-right: 4px; color: #93c5fd; font-size: .5rem; }
-        .td-page .po-ptw { overflow: visible; border-radius: 0; box-shadow: 0 0 0 1px #1a3a4a18; max-height: none; background: transparent; }
+        .td-page .po-ptw { overflow-x: auto; border-radius: 0; box-shadow: 0 0 0 1px #1a3a4a18; max-height: none; background: transparent; }
         .td-page .po-pt { width: auto; border-collapse: separate; border-spacing: 0; font-size: .44rem; color: #1e293b; table-layout: auto; background: #f9fafb; }
         .td-page .po-pt thead th { background: #1e3a5f; color: #e2e8f0; font-weight: 900; text-transform: uppercase; letter-spacing: .02px; padding: 6px 4px; text-align: center !important; white-space: normal; overflow-wrap: break-word; word-break: normal; line-height: 1.18; border-bottom: 1px solid #2a4a6a; border-right: 1px solid #2a4a6a; border-top: 1px solid #2a4a6a; font-size: .46rem; position: sticky; top: 0; z-index: 2; vertical-align: middle; transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform; }
         .td-page .po-pt thead tr:first-child th:first-child { border-top-left-radius: 0; }
@@ -1886,7 +1887,7 @@
 
         /* ===== POLICY: TUYÊN NGANG TABLE ===== */
         .td-page .tn-wrap {
-            overflow: visible;
+            overflow-x: auto;
             border: 1px solid #003366; background: #fff;
             border-radius: 0;
         }
@@ -2344,7 +2345,7 @@
         /* ===== DESKTOP OPTIMIZATION ===== */
         @media (min-width: 641px) {
             /* Popup wider on desktop */
-            .td-page .pop-box { max-width: 1200px; width: 96%; border-radius: 12px; overflow: visible; }
+            .td-page .pop-box { max-width: 1200px; width: 96%; border-radius: 12px; }
             .td-page .pop-bg.open .pop-box { border-radius: 12px; }
             .td-page .pop-bar { padding: 16px 24px 18px; }
             .td-page .pop-bar h2 { font-size: 1.42rem; }
@@ -2472,7 +2473,13 @@
 
         /* === USER OVERRIDES: Unified table headers, alignment, sticky title === */
 
-        /* pop-bar NO LONGER sticky — poster + title scroll away with content */
+        /* Sticky page-title bar pinned to viewport top while scrolling */
+        .td-page .pop-bar {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 30 !important;
+        }
+        body.has-notice .td-page .pop-bar { top: var(--notice-h) !important; }
 
         /* Page title (h2) — centered, unified gold/amber color */
         .td-page .pop-bar-main {
@@ -4657,10 +4664,10 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                 function columnClass(header, colIndex, headers) {
                     var key = headerKey(header);
                     if (/(stt|xep hang)/.test(key)) return 'col-stt num-col';
-                    if (/(ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tvv$|^ten$|ten$)/.test(key)) return 'col-name';
-                    if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma dai ly|hl chuc vu)/.test(key)) return 'col-code';
-                    if (/(nhom kd|nhom)/.test(key)) return 'col-name';
-                    if (/(chuc vu)/.test(key)) return 'col-code num-col';
+                    if (/(ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tv$|ten tvv$|^ten$|ten$)/.test(key)) return 'col-name';
+                    if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma kd|ma dai ly|hl chuc vu)/.test(key)) return 'col-code';
+                    if (/(nhom kd|nhom|don vi|doi tvv)/.test(key)) return 'col-name';
+                    if (/(chuc vu|cv$)/.test(key)) return 'col-code num-col';
                     if (/(sl|so luong|tvv|count|tong|luot hd|so luong hd|thang lam viec|quy mo)/.test(key)) return 'col-count num-col';
                     /* === THƯỞNG === */
                     if (/(thuong|thu nhap|du kien|afyp|doanh so|tien|phat trien kinh doanh)/.test(key)) return 'num-col col-thuong';
@@ -4690,10 +4697,10 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                 function colNatureGroup(header) {
                     var key = headerKey(header);
                     if (/(stt|xep hang)/.test(key)) return 'info';
-                    if (/(ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tvv$|^ten$|ten$)/.test(key)) return 'info';
-                    if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma dai ly|hl chuc vu)/.test(key)) return 'info';
-                    if (/(nhom kd|nhom)/.test(key)) return 'info';
-                    if (/(chuc vu)/.test(key)) return 'info';
+                    if (/(ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tv$|ten tvv$|^ten$|ten$)/.test(key)) return 'info';
+                    if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma kd|ma dai ly|hl chuc vu)/.test(key)) return 'info';
+                    if (/(nhom kd|nhom|don vi|doi tvv)/.test(key)) return 'info';
+                    if (/(chuc vu|cv$)/.test(key)) return 'info';
                     if (/(thuong|thu nhap|du kien|afyp|doanh so|tien|phat trien kinh doanh)/.test(key)) return 'thuong';
                     if (/(dieu kien|dat|chi tieu)/.test(key)) return 'dieukien';
                     if (/(tlht|ty le)/.test(key)) return 'percent';
@@ -4727,12 +4734,12 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
 
                 function cellClass(header, rawVal, displayVal, colIndex, headers, isPolicy) {
                     var key = headerKey(header);
-                    var isInfoCol = /(stt|xep hang|ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tvv$|^ten$|ten$|ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma dai ly|hl chuc vu|nhom kd|nhom|chuc vu)/.test(key);
+                    var isInfoCol = /(stt|xep hang|ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tv$|ten tvv$|^ten$|ten$|ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma kd|ma dai ly|hl chuc vu|nhom kd|nhom|don vi|doi tvv|chuc vu|cv$)/.test(key);
                     /* 4 cột đầu (STT, Nhóm, Mã số, Họ tên) → trắng, không tô màu */
                     if (isInfoCol) {
                         if (/(stt|xep hang)/.test(key)) return 'td-num col-stt';
-                        if (/(ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tvv$|^ten$|ten$|nhom kd|nhom)/.test(key)) return 'td-text col-name';
-                        if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma dai ly|hl chuc vu|chuc vu)/.test(key)) return 'td-text col-code';
+                        if (/(ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tv$|ten tvv$|^ten$|ten$|nhom kd|nhom|don vi|doi tvv)/.test(key)) return 'td-text col-name';
+                        if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma kd|ma dai ly|hl chuc vu|chuc vu|cv$)/.test(key)) return 'td-text col-code';
                     }
                     /* === ĐẠT / CHƯA ĐẠT === */
                     if (rawVal === '10000001111') return 'td-num ach-cell';

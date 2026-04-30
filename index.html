@@ -990,6 +990,7 @@
 
         /* --- NAVIGATION GRID --- */
         .nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 24px; }
+        .nav-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; grid-column: 1 / -1; }
         .nav-btn {
             padding: 14px 10px; border-radius: 12px; border: none; cursor: pointer;
             font-family: inherit; font-weight: 900; font-size: 11px; text-transform: uppercase;
@@ -1011,6 +1012,7 @@
         .nav-plan { background: linear-gradient(135deg, #059669, #065f46); box-shadow: 0 6px 18px #05966966; }
         .nav-race { background: linear-gradient(135deg, #0c4a6e, #082f49); box-shadow: 0 6px 18px #0c4a6e80; border: 1.5px solid #38bdf840; }
         .nav-policy { background: linear-gradient(135deg, #6d28d9, #4c1d95); box-shadow: 0 6px 18px #6d28d966; border: 1.5px solid #a78bfa40; }
+        .nav-clb { background: linear-gradient(135deg, #b45309, #92400e); box-shadow: 0 6px 18px #b4530966; border: 1.5px solid #fbbf2440; }
 
         .link-grid {
             display: grid;
@@ -1502,7 +1504,8 @@
             .nav-detail,
             .nav-plan,
             .nav-race,
-            .nav-policy { border: 1px solid #ffffff14; }
+            .nav-policy,
+            .nav-clb { border: 1px solid #ffffff14; }
             .link-grid { gap: 7px; margin-top: 6px; }
             .link-btn {
                 min-height: 42px;
@@ -1704,7 +1707,7 @@
         .td-page .pt tbody tr.is-focus { background: #bfdbfe !important; box-shadow: 0 2px 12px rgba(37,99,235,.35), inset 3px 0 0 #2563eb; z-index: 5; }
         .td-page .pt tbody tr.is-focus td { color: #1e3a5f !important; font-weight: 700; }
         .td-page .pt tbody tr.is-focus td.cell-dat { background: #fef9c3 !important; color: #854d0e !important; }
-        .td-page .pt tbody tr.is-focus td.cell-chuadat { background: #fef2f2 !important; color: #dc2626 !important; }
+        .td-page .pt tbody tr.is-focus td.cell-chuadat { background: transparent !important; color: #dc2626 !important; }
         .td-page .pt tbody td { padding: 5px 6px; border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; color: #1e293b; font-size: .42rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 1.4; font-variant-numeric: tabular-nums; text-align: center; font-weight: 600; max-width: 200px; background: transparent; }
         /* Policy page: section title + table layout */
         .td-page .po-section { margin-bottom: 14px; }
@@ -1735,7 +1738,7 @@
         .td-page .po-pt thead th.col-code { min-width: 68px; }
         .td-page .po-pt thead th.col-count { min-width: 34px; }
         .td-page .po-pt thead th.col-thuong { background: #4a3520; color: #fbbf24; }
-        .td-page .po-pt thead th.col-dieukien { background: #1a4a3a; color: #6ee7b7; }
+        .td-page .po-pt thead th.col-dieukien { background: #b8860b; color: #fff8e1; }
         .td-page .po-pt thead th.col-percent { background: #3a2a5a; color: #c4b5fd; }
         .td-page .po-pt tbody tr { transition: background .15s, box-shadow .2s, transform .2s; cursor: pointer; position: relative; }
         .td-page .po-pt tbody tr:hover { background: #e0f2fe !important; }
@@ -1754,24 +1757,23 @@
         .td-page .po-pt td.col-code { text-align: center !important; color: #475569; font-size: .38rem; font-weight: 600; letter-spacing: .3px; }
         .td-page .po-pt th.col-code { text-align: center !important; }
         .td-page .po-pt td.cell-dat { background: #fef9c3 !important; color: #1d4ed8 !important; font-weight: 800; text-align: center; }
-        .td-page .po-pt td.cell-chuadat { background: #fef2f2 !important; color: #dc2626 !important; font-weight: 800; text-align: center; }
+        .td-page .po-pt td.cell-chuadat { background: transparent !important; color: #dc2626 !important; font-weight: 800; font-style: italic; text-align: center; }
         .td-page .po-pt td.cell-percent { color: #dc2626 !important; font-weight: 900 !important; text-align: center; }
         .td-page .po-pt td.cell-percent.neg { color: #991b1b !important; }
         .td-page .po-pt thead th.col-luyke { background: #4a3520; color: #fbbf24; }
-        /* === Header gradient: chỉ tiêu tăng dần cho po === */
-        .td-page .po-pt thead th.col-dieukien.ct-lv1 { background: #1f5f4f; }
-        .td-page .po-pt thead th.col-dieukien.ct-lv2 { background: #1a6e54; }
-        .td-page .po-pt thead th.col-dieukien.ct-lv3 { background: #167d59; }
-        .td-page .po-pt thead th.col-dieukien.ct-lv4 { background: #128c5e; }
-        .td-page .po-pt thead th.col-dieukien.ct-lv5 { background: #0e9b63; }
-        /* === Body cell tinting by nature for po-pt === */
-        /* ct-dieukien (green family) */
-        .td-page .po-pt tbody td.ct-dieukien { background: #e0f7ef !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv1 { background: #d0f0e4 !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv2 { background: #c0e9d9 !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv3 { background: #b0e2ce !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv4 { background: #a0dbc3 !important; color: #065f46 !important; }
-        .td-page .po-pt tbody td.ct-dieukien-lv5 { background: #90d4b8 !important; color: #065f46 !important; }
+        /* === Header gradient: chỉ tiêu tăng dần cho po — vàng cam === */
+        .td-page .po-pt thead th.col-dieukien.ct-lv1 { background: #c49416; }
+        .td-page .po-pt thead th.col-dieukien.ct-lv2 { background: #d0a21f; }
+        .td-page .po-pt thead th.col-dieukien.ct-lv3 { background: #dcb029; }
+        .td-page .po-pt thead th.col-dieukien.ct-lv4 { background: #e8be33; }
+        .td-page .po-pt thead th.col-dieukien.ct-lv5 { background: #f4cc3c; }
+        /* ct-dieukien (vàng nhạt gradient: trắng → vàng nhạt) */
+        .td-page .po-pt tbody td.ct-dieukien { background: #ffffff !important; color: #92400e !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv1 { background: #fffef5 !important; color: #92400e !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv2 { background: #fffde6 !important; color: #92400e !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv3 { background: #fffcd0 !important; color: #92400e !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv4 { background: #fffbb8 !important; color: #92400e !important; }
+        .td-page .po-pt tbody td.ct-dieukien-lv5 { background: #fff9a0 !important; color: #92400e !important; }
         /* ct-thuong (gold family) */
         .td-page .po-pt tbody td.ct-thuong { background: #fff3cd !important; color: #92400e !important; }
         .td-page .po-pt tbody td.ct-thuong-lv1 { background: #ffecb3 !important; color: #92400e !important; }
@@ -1788,24 +1790,12 @@
         .td-page .po-pt tbody td.ct-luyke-lv1 { background: #ffecb3 !important; color: #92400e !important; }
         /* === THƯỞNG cell cho po === */
         .td-page .po-pt .thuong-val {
-            font-weight: 900; color: #1d4ed8; white-space: nowrap;
+            font-weight: 900; color: #1d4ed8; white-space: nowrap; font-size: .52rem;
         }
         .td-page .po-pt .thuong-val i {
-            color: #f59e0b; font-size: .58rem; margin-right: 2px; vertical-align: middle; line-height: 1;
+            color: #f59e0b; font-size: .68rem; margin-right: 3px; vertical-align: middle; line-height: 1;
         }
-        /* === Shared THƯỞNG styling for TL and TN tables === */
-        .td-page .policy-tl .thuong-val {
-            font-weight: 900; color: #1d4ed8; white-space: nowrap; font-size: .44rem;
-        }
-        .td-page .policy-tl .thuong-val i {
-            color: #f59e0b; font-size: .5rem; margin-right: 2px; vertical-align: middle; line-height: 1;
-        }
-        .td-page .tn-table .thuong-val {
-            font-weight: 900; color: #1d4ed8; white-space: nowrap; font-size: .42rem;
-        }
-        .td-page .tn-table .thuong-val i {
-            color: #f59e0b; font-size: .48rem; margin-right: 2px; vertical-align: middle; line-height: 1;
-        }
+        /* === THƯỞNG cell cho po (TN/TL dùng chung qua class po-pt) === */
         .td-page .po-pt td.col-thuong-cell {
             background: #eff6ff !important; color: #1d4ed8 !important; font-weight: 900;
         }
@@ -1817,7 +1807,7 @@
         .td-page .po-pt tbody tr.is-focus { background: #bfdbfe !important; box-shadow: 0 2px 12px rgba(37,99,235,.35), inset 3px 0 0 #2563eb; z-index: 5; }
         .td-page .po-pt tbody tr.is-focus td { color: #1e3a5f !important; font-weight: 700; }
         .td-page .po-pt tbody tr.is-focus td.cell-dat { background: #fef9c3 !important; color: #1d4ed8 !important; }
-        .td-page .po-pt tbody tr.is-focus td.cell-chuadat { background: #fef2f2 !important; color: #dc2626 !important; }
+        .td-page .po-pt tbody tr.is-focus td.cell-chuadat { background: transparent !important; color: #dc2626 !important; }
         .td-page .po-pt .ach-pill { display: inline-flex; align-items: center; justify-content: center; padding: 2px 10px; border-radius: 4px; font-size: .42rem; font-weight: 900; letter-spacing: .02em; color: #1d4ed8; background: #fef9c3; border: 1px solid #fde68a; }
         .td-page .po-pt .dat-badge { background: #fef9c3; color: #1d4ed8; font-weight: 900; padding: 2px 10px; border-radius: 4px; letter-spacing: .2px; font-size: .42rem; white-space: nowrap; display: inline-flex; align-items: center; border: 1px solid #fde68a; }
         /* Policy auto-wide */
@@ -1829,34 +1819,29 @@
         .td-page .po-pt tbody td.po-cc { text-align: center !important; }
         .td-page .po-pt tbody td.po-cc.num-col { background: #f0f8ff !important; color: #1e40af !important; }
         .td-page .po-pt tbody td.po-cc.col-thuong { background: #fffcf0 !important; color: #92400e !important; }
-        .td-page .po-pt tbody td.po-cc.col-dieukien { background: #f2fdf8 !important; color: #065f46 !important; }
+        .td-page .po-pt tbody td.po-cc.col-dieukien { background: #fffde6 !important; color: #92400e !important; }
         .td-page .po-pt tbody td.po-cc.col-percent { background: #faf7ff !important; color: #5b21b6 !important; }
         /* Policy-specific TL table - keep original sizes */
         .td-page .policy-tl-wrap { overflow: visible; border-radius: 0; background: #ffffff; box-shadow: 0 0 0 1px #1a3a4a18; }
         .td-page .policy-tl { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: auto; background: #ffffff; }
-        .td-page .policy-tl th, .td-page .policy-tl td { border-bottom: 1px solid #7aa8cf; border-right: 1px solid #7aa8cf; padding: 6px 5px; text-align: center; font-family: Tahoma, Arial, Helvetica, sans-serif; }
-        .td-page .policy-tl th:first-child, .td-page .policy-tl td:first-child { border-left: 1px solid #7aa8cf; }
-        .td-page .policy-tl th { background: #1e3a5f; color: #ffffff; font-size: .48rem; font-weight: 900; line-height: 1.15; vertical-align: middle; white-space: normal; overflow-wrap: break-word; position: sticky; top: 0; z-index: 2; border-top: 1px solid #7aa8cf; border-bottom: 1px solid #7aa8cf; border-right: 1px solid #7aa8cf; transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform; }
+        .td-page .policy-tl th, .td-page .policy-tl td { border-bottom: 1px solid #2a4a6a; border-right: 1px solid #2a4a6a; padding: 6px 5px; text-align: center; font-family: Tahoma, Arial, Helvetica, sans-serif; }
+        .td-page .policy-tl th:first-child, .td-page .policy-tl td:first-child { border-left: 1px solid #2a4a6a; }
+        .td-page .policy-tl th { background: #1e3a5f; color: #ffffff; font-size: .48rem; font-weight: 900; line-height: 1.15; vertical-align: middle; white-space: normal; overflow-wrap: break-word; position: sticky; top: 0; z-index: 2; border-top: 1px solid #2a4a6a; border-bottom: 1px solid #2a4a6a; border-right: 1px solid #2a4a6a; transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform; }
         .td-page .policy-tl thead tr:first-child th:first-child { border-top-left-radius: 0; }
         .td-page .policy-tl thead tr:first-child th:last-child { border-top-right-radius: 0; }
         .td-page .policy-tl tbody tr:last-child td:first-child { border-bottom-left-radius: 0; }
         .td-page .policy-tl tbody tr:last-child td:last-child { border-bottom-right-radius: 0; }
         .td-page .policy-tl th.tl-count { background: #134e5a; color: #67e8f9; }
         .td-page .policy-tl th.tl-reward { background: #4a3520; color: #fbbf24; }
-        .td-page .policy-tl td { font-size: .44rem; color: #17324d; font-weight: 700; background: #f9fbfd; }
+        .td-page .policy-tl td { font-size: .44rem; color: #17324d; font-weight: 700; background: transparent; }
         .td-page .policy-tl tbody tr { transition: background .15s, box-shadow .2s; cursor: pointer; position: relative; }
         .td-page .policy-tl tbody tr:hover td { background: #e0f2fe !important; }
-        .td-page .policy-tl tbody tr:hover td.tl-role { background: #dbeafe !important; }
-        .td-page .policy-tl tbody tr:hover td.tl-count { background: #dbeafe !important; }
-        .td-page .policy-tl tbody tr:hover td.tl-reward { background: #dbeafe !important; }
         .td-page .policy-tl tbody tr.is-focus { box-shadow: 0 2px 12px rgba(37,99,235,.35); z-index: 5; }
         .td-page .policy-tl tbody tr.is-focus td { background: #bfdbfe !important; color: #1e3a5f !important; }
-        .td-page .policy-tl tbody tr.is-focus td.tl-role { background: #dbeafe !important; }
-        .td-page .policy-tl tbody tr.is-focus td.tl-count { background: #dbeafe !important; }
-        .td-page .policy-tl tbody tr.is-focus td.tl-reward { background: #dbeafe !important; color: #1d4ed8 !important; }
-        .td-page .policy-tl td.tl-role { background: #f6f9ff !important; color: #1e3a5f !important; text-align: center; }
-        .td-page .policy-tl td.tl-count { background: #f0f8ff !important; color: #1e40af !important; text-align: center; }
-        .td-page .policy-tl td.tl-reward { background: #eff6ff !important; color: #1d4ed8; text-align: center; font-weight: 900; }
+        .td-page .policy-tl tbody tr.is-focus td.tl-reward { color: #1d4ed8 !important; }
+        .td-page .policy-tl td.tl-role { text-align: center; }
+        .td-page .policy-tl td.tl-count { text-align: center; }
+        .td-page .policy-tl td.tl-reward { text-align: center; font-weight: 900; }
         .td-page .policy-tl td.tl-name { text-align: left; }
         .td-page .policy-tl .tl-reward-title { display: block; font-size: .54rem; line-height: 1.05; }
         .td-page .policy-tl .tl-reward-note { display: block; margin-top: 4px; color: #ffe95d; font-size: .34rem; font-weight: 900; line-height: 1.25; text-transform: none; }
@@ -1888,18 +1873,19 @@
         /* ===== POLICY: TUYÊN NGANG TABLE ===== */
         .td-page .tn-wrap {
             overflow-x: auto;
-            border: 1px solid #003366; background: #fff;
+            border: 1px solid #2a4a6a; background: #fff;
             border-radius: 0;
         }
         .td-page .tn-table {
-            width: 100%; min-width: 1400px;
-            border-collapse: collapse;
-            table-layout: fixed;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            table-layout: auto;
             font-family: Tahoma, Arial, Helvetica, sans-serif;
         }
         /* Section title banner above table */
         .td-page .tn-title {
-            background: linear-gradient(135deg, #001a33 0%, #002244 30%, #003366 70%, #004080 100%);
+            background: linear-gradient(135deg, #0f2440 0%, #1e3a5f 30%, #1a4a6a 70%, #2563eb 100%);
             color: #ffffff;
             font-weight: 900;
             font-size: .72rem;
@@ -1908,10 +1894,10 @@
             text-align: center;
             padding: 12px 16px;
             line-height: 1.35;
-            border: 1px solid #003366;
+            border: 1px solid #1e3a5f;
             border-bottom: 3px solid #ffc505;
             border-radius: 4px 4px 0 0;
-            box-shadow: 0 4px 16px rgba(0,51,102,.35);
+            box-shadow: 0 4px 16px rgba(30,58,95,.35);
             position: relative;
             overflow: hidden;
         }
@@ -1940,29 +1926,29 @@
             letter-spacing: .04em;
             vertical-align: middle;
         }
-        /* Column widths */
-        .td-page .tn-table .tn-c-stt { width: 32px; }
-        .td-page .tn-table .tn-c-tn { width: 80px; }
-        .td-page .tn-table .tn-c-ms { width: 80px; }
-        .td-page .tn-table .tn-c-hoten { width: 140px; }
-        .td-page .tn-table .tn-c-cv { width: 70px; }
-        .td-page .tn-table .tn-c-hlcv { width: 75px; }
-        .td-page .tn-table .tn-c-thang { width: 65px; }
-        .td-page .tn-table .tn-c-sub { width: 72px; }
-        .td-page .tn-table .tn-c-thuong { width: 80px; }
-        .td-page .tn-table .tn-c-bkip { width: 72px; }
+        /* Column widths — narrow auto */
+        .td-page .tn-table .tn-c-stt { width: 28px; }
+        .td-page .tn-table .tn-c-tn { width: 58px; }
+        .td-page .tn-table .tn-c-ms { width: 58px; }
+        .td-page .tn-table .tn-c-hoten { width: 100px; }
+        .td-page .tn-table .tn-c-cv { width: 46px; }
+        .td-page .tn-table .tn-c-hlcv { width: 50px; }
+        .td-page .tn-table .tn-c-thang { width: 44px; }
+        .td-page .tn-table .tn-c-sub { width: 50px; }
+        .td-page .tn-table .tn-c-thuong { width: 58px; }
+        .td-page .tn-table .tn-c-bkip { width: 50px; }
         /* Header rows */
         .td-page .tn-table thead th {
-            background: #003366;
+            background: #1e3a5f;
             color: #ffffff;
             font-weight: 900;
             font-size: .46rem;
             text-transform: uppercase;
             letter-spacing: .02em;
             text-align: center;
-            padding: 7px 4px;
+            padding: 6px 3px;
             line-height: 1.2;
-            border: 1px solid #004080;
+            border-bottom: 1px solid #2a4a6a; border-right: 1px solid #2a4a6a; border-top: 1px solid #2a4a6a;
             vertical-align: middle;
             white-space: normal;
             overflow-wrap: break-word;
@@ -1978,22 +1964,22 @@
             top: 0; z-index: 4;
         }
         .td-page .tn-table thead tr:nth-child(2) th {
-            top: 28px; z-index: 3;
+            top: 24px; z-index: 3;
         }
-        .td-page .tn-table thead th.tn-h-stt { background: #002244; z-index: 5; position: sticky; left: 0; top: 0; }
-        .td-page .tn-table thead th.tn-h-tn { background: #002244; z-index: 4; position: sticky; left: 32px; top: 0; }
+        .td-page .tn-table thead th.tn-h-stt { background: #162d4a; z-index: 5; position: sticky; left: 0; top: 0; }
+        .td-page .tn-table thead th.tn-h-tn { background: #162d4a; z-index: 4; position: sticky; left: 28px; top: 0; }
         .td-page .tn-table thead tr:nth-child(2) th.tn-h-stt,
-        .td-page .tn-table thead tr:nth-child(2) th.tn-h-tn { z-index: 5; top: 28px; }
+        .td-page .tn-table thead tr:nth-child(2) th.tn-h-tn { z-index: 5; top: 24px; }
         /* Group headers: CHỈ TIÊU, THỰC HIỆN THÁNG - xanh nhạt */
         .td-page .tn-table thead th.tn-h-chitieu,
         .td-page .tn-table thead th.tn-h-ththang {
-            background: #004488;
+            background: #1a4a5a;
             font-size: .48rem;
             letter-spacing: .04em;
         }
         /* Group header: THỰC HIỆN LŨY KÊ - vàng (giống thưởng) */
         .td-page .tn-table thead th.tn-h-luyke {
-            background: #8b6914;
+            background: #4a3520;
             color: #fff8e1;
             font-size: .48rem;
             letter-spacing: .04em;
@@ -2001,96 +1987,82 @@
         /* Reward group header - vàng */
         .td-page .tn-table thead th.tn-h-thuong,
         .td-page .tn-table thead th.tn-h-bkip {
-            background: #8b6914;
+            background: #4a3520;
             color: #fff8e1;
             font-size: .46rem;
         }
         .td-page .tn-table thead th.tn-h-thuangr {
-            background: #8b6914;
+            background: #4a3520;
             color: #fff8e1;
             font-size: .44rem;
         }
         /* Sub-header row 2: color groups */
         .td-page .tn-table thead tr:nth-child(2) th.tn-hs-ct {
-            background: #1a5276; color: #d6eaf8;
+            background: #1e3a5f; color: #d6eaf8;
         }
         .td-page .tn-table thead tr:nth-child(2) th.tn-hs-th {
-            background: #1a5276; color: #d6eaf8;
+            background: #1e3a5f; color: #d6eaf8;
         }
         .td-page .tn-table thead tr:nth-child(2) th.tn-hs-tw {
-            background: #9a7b2e; color: #fff8e1;
+            background: #4a3520; color: #fff8e1;
         }
         .td-page .tn-table thead tr:nth-child(2) th.tn-hs-lk {
-            background: #9a7b2e; color: #fff8e1;
+            background: #4a3520; color: #fff8e1;
         }
         /* Body cells */
         .td-page .tn-table tbody td {
-            padding: 5px 4px;
+            padding: 4px 3px;
             text-align: center;
             font-size: .42rem;
             font-weight: 600;
             color: #1a1a1a;
             line-height: 1.3;
-            border: 1px solid #b0c4de;
-            background: #ffffff;
+            border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; border-top: none; border-left: none;
+            background: transparent;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             font-variant-numeric: tabular-nums;
+            max-width: 180px;
         }
-        /* Numeric data cells - đỏ nhấn mạnh */
-        .td-page .tn-table tbody td.tn-d-num {
-            color: #b91c1c;
-            font-weight: 700;
-        }
-        .td-page .tn-table tbody tr:hover td.tn-d-num { color: #7f1d1d !important; }
-        .td-page .tn-table tbody tr:hover td { background: #ccdeff !important; }
+        .td-page .tn-table tbody tr:hover td { background: #e0f2fe !important; }
         /* Sticky columns for body */
         .td-page .tn-table tbody td.tn-d-stt {
             position: sticky; left: 0; z-index: 2;
-            background: #f0f4ff !important; font-weight: 800; color: #333;
+            background: transparent !important; font-weight: 700; color: #64748b;
         }
-        .td-page .tn-table tbody tr:hover td.tn-d-stt { background: #c5d4ff !important; }
+        .td-page .tn-table tbody tr:hover td.tn-d-stt { background: #bfdbfe !important; }
         .td-page .tn-table tbody td.tn-d-tn {
-            position: sticky; left: 32px; z-index: 2;
-            background: #f8faff !important; font-weight: 700; color: #003366;
+            position: sticky; left: 28px; z-index: 2;
+            background: transparent !important; font-weight: 700; color: #0f172a;
         }
-        .td-page .tn-table tbody tr:hover td.tn-d-tn { background: #d0ddff !important; }
+        .td-page .tn-table tbody tr:hover td.tn-d-tn { background: #bfdbfe !important; }
         /* Name column */
         .td-page .tn-table tbody td.tn-d-hoten { text-align: left !important; padding-left: 6px; font-weight: 700; }
-        /* Lũy kế cells - vàng nhạt (giống thưởng) */
-        .td-page .tn-table tbody td.tn-d-lk {
-            background: #fff8e1 !important; color: #8b6914; font-weight: 700;
-        }
         /* tn even-row rules removed — no zebra striping */
-        /* Reward cells */
-        .td-page .tn-table tbody td.tn-d-thuangr {
-            background: #eff6ff !important; color: #1d4ed8; font-weight: 900;
-        }
-        .td-page .tn-table tbody td.tn-d-bkip {
-            background: #eff6ff !important; color: #1d4ed8; font-weight: 900;
-        }
+        /* Reward cells — removed (now uses shared .col-thuong-cell via po-pt) */
         /* Active row */
         .td-page .tn-table tbody tr.is-focus { box-shadow: 0 2px 12px rgba(37,99,235,.35); z-index: 5; }
-        .td-page .tn-table tbody tr.is-focus td { background: #b3ccff !important; color: #001a33 !important; }
-        .td-page .tn-table tbody tr.is-focus td.tn-d-stt { background: #99b3ff !important; }
-        .td-page .tn-table tbody tr.is-focus td.tn-d-tn { background: #aaccff !important; }
-        .td-page .tn-table tbody tr.is-focus td.tn-d-thuangr { background: #ffe680 !important; }
-        .td-page .tn-table tbody tr.is-focus td.tn-d-bkip { background: #ffd966 !important; }
-        .td-page .tn-table tbody tr.is-focus td.tn-d-lk { background: #ffe680 !important; }
-        .td-page .tn-table tbody tr.is-focus td.tn-d-num { color: #7f1d1d !important; }
+        .td-page .tn-table tbody tr.is-focus td { background: #bfdbfe !important; color: #1e3a5f !important; }
+        .td-page .tn-table tbody tr.is-focus td.tn-d-stt { background: #bfdbfe !important; }
+        .td-page .tn-table tbody tr.is-focus td.tn-d-tn { background: #bfdbfe !important; }
+        /* TN is-focus thuong/luyke uses shared .po-pt rules */
+        /* TN header border alignment with po-pt */
+        .td-page .tn-table thead th { border-bottom: 1px solid #2a4a6a; border-right: 1px solid #2a4a6a; border-top: 1px solid #2a4a6a; }
+        .td-page .tn-table thead th:first-child { border-left: 1px solid #2a4a6a; }
+        .td-page .tn-table tbody td:first-child { border-left: 1px solid #cbd5e1; }
         /* Note footer below table */
         .td-page .tn-note {
             margin-top: 8px;
             padding: 8px 12px;
-            background: #f0f6ff;
-            border: 1px solid #b0c4de;
+            background: #f0f9ff;
+            border: 1px solid #cbd5e1;
             border-radius: 0 0 4px 4px;
             font-size: .42rem;
             color: #334155;
             line-height: 1.5;
         }
-        .td-page .tn-note b { color: #003366; }
+        .td-page .tn-note b { color: #1e3a5f; }
         .td-page .tn-note .tn-note-warn { color: #b91c1c; font-weight: 700; }
         @media (min-width: 1024px) {
             .td-page .tn-note { font-size: .52rem; padding: 10px 16px; }
@@ -2100,16 +2072,16 @@
         @media (max-width: 640px) {
             .td-page .tn-table thead th { font-size: .38rem; padding: 5px 2px; }
             .td-page .tn-table tbody td { font-size: .36rem; padding: 4px 2px; }
-            .td-page .tn-table .tn-c-stt { width: 24px; }
-            .td-page .tn-table .tn-c-tn { width: 60px; }
-            .td-page .tn-table .tn-c-ms { width: 60px; }
-            .td-page .tn-table .tn-c-hoten { width: 100px; }
-            .td-page .tn-table .tn-c-cv { width: 52px; }
-            .td-page .tn-table .tn-c-hlcv { width: 56px; }
-            .td-page .tn-table .tn-c-thang { width: 50px; }
-            .td-page .tn-table .tn-c-sub { width: 56px; }
-            .td-page .tn-table .tn-c-thuong { width: 62px; }
-            .td-page .tn-table .tn-c-bkip { width: 56px; }
+            .td-page .tn-table .tn-c-stt { width: 22px; }
+            .td-page .tn-table .tn-c-tn { width: 44px; }
+            .td-page .tn-table .tn-c-ms { width: 44px; }
+            .td-page .tn-table .tn-c-hoten { width: 72px; }
+            .td-page .tn-table .tn-c-cv { width: 36px; }
+            .td-page .tn-table .tn-c-hlcv { width: 40px; }
+            .td-page .tn-table .tn-c-thang { width: 36px; }
+            .td-page .tn-table .tn-c-sub { width: 40px; }
+            .td-page .tn-table .tn-c-thuong { width: 44px; }
+            .td-page .tn-table .tn-c-bkip { width: 40px; }
             .td-page .tn-title { font-size: .6rem; padding: 10px 10px; }
             .td-page .tn-title i { font-size: .7rem; }
             .td-page .tn-table thead tr:nth-child(2) th { top: 22px; }
@@ -2117,7 +2089,7 @@
         @media (min-width: 1024px) {
             .td-page .tn-table thead th { font-size: .56rem; padding: 9px 6px; }
             .td-page .tn-table tbody td { font-size: .52rem; padding: 6px 5px; }
-            .td-page .tn-table .tn-c-hoten { width: 170px; }
+            .td-page .tn-table .tn-c-hoten { width: 120px; }
             .td-page .tn-title { font-size: .82rem; padding: 14px 20px; }
             .td-page .tn-title i { font-size: .94rem; }
             .td-page .tn-table thead tr:nth-child(2) th { top: 32px; }
@@ -2138,27 +2110,28 @@
         .td-page .pt th.col-code { text-align: center !important; }
         /* Column-specific header colors */
         .td-page .pt thead th.col-thuong { background: #4a3520; color: #fbbf24; }
-        .td-page .pt thead th.col-dieukien { background: #1a4a3a; color: #6ee7b7; }
+        .td-page .pt thead th.col-dieukien { background: #b8860b; color: #fff8e1; }
         .td-page .pt thead th.col-percent { background: #3a2a5a; color: #c4b5fd; }
         .td-page .pt thead th.col-luyke { background: #4a3520; color: #fbbf24; }
-        /* === Header gradient: chỉ tiêu tăng dần (mức 1-5) === */
-        .td-page .pt thead th.col-dieukien.ct-lv1 { background: #1f5f4f; }
-        .td-page .pt thead th.col-dieukien.ct-lv2 { background: #1a6e54; }
-        .td-page .pt thead th.col-dieukien.ct-lv3 { background: #167d59; }
-        .td-page .pt thead th.col-dieukien.ct-lv4 { background: #128c5e; }
-        .td-page .pt thead th.col-dieukien.ct-lv5 { background: #0e9b63; }
+        /* === Header gradient: chỉ tiêu tăng dần — vàng cam === */
+        .td-page .pt thead th.col-dieukien.ct-lv1 { background: #c49416; }
+        .td-page .pt thead th.col-dieukien.ct-lv2 { background: #d0a21f; }
+        .td-page .pt thead th.col-dieukien.ct-lv3 { background: #dcb029; }
+        .td-page .pt thead th.col-dieukien.ct-lv4 { background: #e8be33; }
+        .td-page .pt thead th.col-dieukien.ct-lv5 { background: #f4cc3c; }
         /* Cell highlights */
         .td-page .pt td.cell-dat { background: #fef9c3 !important; color: #1d4ed8 !important; font-weight: 800; text-align: center; }
-        .td-page .pt td.cell-chuadat { background: #fef2f2 !important; color: #dc2626 !important; font-weight: 800; text-align: center; }
+        .td-page .pt td.cell-chuadat { background: transparent !important; color: #dc2626 !important; font-weight: 800; font-style: italic; text-align: center; }
         .td-page .pt td.cell-percent { color: #dc2626 !important; font-weight: 900 !important; text-align: center; }
         .td-page .pt td.cell-percent.neg { color: #991b1b !important; }
         /* === Body cell tinting by nature group === */
-        .td-page .pt tbody td.ct-dieukien { background: #e0f7ef !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv1 { background: #d0f0e4 !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv2 { background: #c0e9d9 !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv3 { background: #b0e2ce !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv4 { background: #a0dbc3 !important; color: #065f46 !important; }
-        .td-page .pt tbody td.ct-dieukien-lv5 { background: #90d4b8 !important; color: #065f46 !important; }
+        /* ct-dieukien (vàng nhạt gradient: trắng → vàng nhạt) */
+        .td-page .pt tbody td.ct-dieukien { background: #ffffff !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-dieukien-lv1 { background: #fffef5 !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-dieukien-lv2 { background: #fffde6 !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-dieukien-lv3 { background: #fffcd0 !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-dieukien-lv4 { background: #fffbb8 !important; color: #92400e !important; }
+        .td-page .pt tbody td.ct-dieukien-lv5 { background: #fff9a0 !important; color: #92400e !important; }
         .td-page .pt tbody td.ct-thuong { background: #fff3cd !important; color: #92400e !important; }
         .td-page .pt tbody td.ct-thuong-lv1 { background: #ffecb3 !important; color: #92400e !important; }
         .td-page .pt tbody td.ct-thuong-lv2 { background: #ffe099 !important; color: #92400e !important; }
@@ -2174,11 +2147,12 @@
             font-weight: 900;
             color: #1d4ed8;
             white-space: nowrap;
+            font-size: .52rem;
         }
         .td-page .pt .thuong-val i {
             color: #f59e0b;
-            font-size: .58rem;
-            margin-right: 2px;
+            font-size: .68rem;
+            margin-right: 3px;
             vertical-align: middle;
             line-height: 1;
         }
@@ -2187,6 +2161,17 @@
             color: #1d4ed8 !important;
             font-weight: 900;
         }
+        /* === TỔNG FYP NHÓM: hồng header, hồng nhạt body, trái, đậm === */
+        .td-page .pt thead th.col-fypnhom { background: #be185d; color: #fce7f3; }
+        .td-page .pt tbody td.col-fypnhom-cell { background: #fce7f3 !important; color: #1e293b !important; font-weight: 900; text-align: left !important; padding-left: 8px; }
+        .td-page .po-pt thead th.col-fypnhom { background: #be185d; color: #fce7f3; }
+        .td-page .po-pt tbody td.col-fypnhom-cell { background: #fce7f3 !important; color: #1e293b !important; font-weight: 900; text-align: left !important; padding-left: 8px; }
+        /* === FYC: bỏ tô màu === */
+        .td-page .pt tbody td.col-fyc-cell { background: transparent !important; }
+        .td-page .po-pt tbody td.col-fyc-cell { background: transparent !important; }
+        /* === Mã đại lý: đảm bảo không tô màu === */
+        .td-page .pt tbody td.po-cc.col-code { background: transparent !important; }
+        .td-page .po-pt tbody td.po-cc.col-code { background: transparent !important; }
         /* pt even-row thuong-cell rule removed — no zebra striping */
         /* === TỶ LỆ: bold + đỏ === */
         .td-page .pt .percent-val { font-weight: 900; color: #dc2626; }
@@ -2498,12 +2483,10 @@
         /* Unified header style for ALL tables in race/policy views */
         .td-page .pt thead th,
         .td-page .pt thead th.col-thuong,
-        .td-page .pt thead th.col-dieukien,
         .td-page .pt thead th.col-percent,
         .td-page .pt thead th.num-col,
         .td-page .po-pt thead th,
         .td-page .po-pt thead th.col-thuong,
-        .td-page .po-pt thead th.col-dieukien,
         .td-page .po-pt thead th.col-percent,
         .td-page .po-pt thead th.num-col,
         .td-page .po-pt thead th.col-name,
@@ -2698,12 +2681,17 @@
                 <button class="nav-btn nav-plan" onclick="go('view-calendar')">
                     <span class="nav-icon"><i class="fa-solid fa-calendar-days"></i></span> Kế hoạch khung
                 </button>
-                <button class="nav-btn nav-race" onclick="go('view-race')">
-                    <span class="nav-icon"><i class="fa-solid fa-flag"></i></span> Thi đua
-                </button>
-                <button class="nav-btn nav-policy" onclick="go('view-policy')">
-                    <span class="nav-icon"><i class="fa-solid fa-book"></i></span> Chính sách 2026
-                </button>
+                <div class="nav-row-3">
+                    <button class="nav-btn nav-race" onclick="go('view-race')">
+                        <span class="nav-icon"><i class="fa-solid fa-flag"></i></span> Thi đua
+                    </button>
+                    <button class="nav-btn nav-policy" onclick="go('view-policy')">
+                        <span class="nav-icon"><i class="fa-solid fa-book"></i></span> Chính sách 2026
+                    </button>
+                    <button class="nav-btn nav-clb" onclick="go('view-clb')">
+                        <span class="nav-icon"><i class="fa-solid fa-star"></i></span> CLB Sao Việt
+                    </button>
+                </div>
             </nav>
 
             <div class="section-divider" id="sec-divider" style="display:none">Chi tiết các phòng</div>
@@ -2754,6 +2742,9 @@
 
         <!-- POLICY VIEW (Injected via JS) -->
         <section class="view td-page" id="view-policy"></section>
+
+        <!-- CLB VIEW (Injected via JS) -->
+        <section class="view td-page" id="view-clb"></section>
 
     </div>
 
@@ -2865,7 +2856,7 @@
             document.body.style.overflow = '';
             
             // Close modals if any are open
-            [tdPage, poPage].forEach(function(pg) {
+            [tdPage, poPage, clbPage].forEach(function(pg) {
                 if (!pg) return;
                 ['PwMdl', 'CfmDel', 'Mdl', 'Popup'].forEach(function(s) {
                     var el = pg.gid(s);
@@ -2887,6 +2878,8 @@
                 tdPage.init();
             } else if (viewId === 'view-policy') {
                 poPage.init();
+            } else if (viewId === 'view-clb') {
+                clbPage.init();
             }
         }
 
@@ -4090,7 +4083,7 @@
                 return;
             }
             var body = all.slice(1, 1 + rows);
-            var html = '<div class="policy-tl-wrap"><table class="policy-tl"><thead><tr>' +
+            var html = '<div class="policy-tl-wrap"><table class="po-pt policy-tl"><thead><tr>' +
                 '<th class="tl-stt">STT</th>' +
                 '<th class="tl-group">NHÓM KD</th>' +
                 '<th class="tl-code">MS ĐẠI LÝ</th>' +
@@ -4103,13 +4096,13 @@
             body.forEach(function(r, idx) {
                 var reward = String(r[5] || '').trim();
                 html += '<tr>' +
-                    '<td>' + (idx + 1) + '</td>' +
-                    '<td class="tl-name">' + esc(String(r[0] || '').trim()) + '</td>' +
-                    '<td>' + esc(String(r[1] || '').trim()) + '</td>' +
-                    '<td class="tl-name">' + esc(String(r[2] || '').trim()) + '</td>' +
-                    '<td class="tl-role">' + esc(String(r[3] || '').trim()) + '</td>' +
-                    '<td class="tl-count">' + esc(String(r[4] || '').trim()) + '</td>' +
-                    '<td class="tl-reward">' + (reward ? '<span class="thuong-val"><i class="fa-solid fa-trophy"></i> ' + esc(Number(reward.replace(/\./g, '').replace(',', '.')).toLocaleString('vi-VN')) + '</span>' : '') + '</td>' +
+                    '<td class="pst">' + (idx + 1) + '</td>' +
+                    '<td class="td-text col-name">' + esc(String(r[0] || '').trim()) + '</td>' +
+                    '<td class="td-text col-code">' + esc(String(r[1] || '').trim()) + '</td>' +
+                    '<td class="td-text col-name">' + esc(String(r[2] || '').trim()) + '</td>' +
+                    '<td class="td-text col-code">' + esc(String(r[3] || '').trim()) + '</td>' +
+                    '<td class="td-num ct-count">' + esc(String(r[4] || '').trim()) + '</td>' +
+                    '<td class="col-thuong-cell">' + (reward ? '<span class="thuong-val"><i class="fa-solid fa-trophy"></i> ' + esc(Number(reward.replace(/\./g, '').replace(',', '.')).toLocaleString('vi-VN')) + '</span>' : '') + '</td>' +
                     '</tr>';
             });
             html += '</tbody></table></div>';
@@ -4214,47 +4207,33 @@
                     return n.toLocaleString('vi-VN');
                 }
 
-                /* Helper: check if value is numeric */
-                function isNum(v) {
-                    if (v == null) return false;
-                    var s = String(v).trim();
-                    if (!s) return false;
-                    return /^-?\d+(?:[.,]\d+)?$/.test(s.replace(/\s/g, ''));
-                }
                 /* Helper: reward cell with trophy icon */
-                function tnRewardCell(v, extra) {
+                function tnRewardCell(v) {
                     var val = fv(v);
-                    if (!val) return '<td class="' + extra + '"></td>';
-                    return '<td class="' + extra + '"><span class="thuong-val"><i class="fa-solid fa-trophy"></i> ' + esc(val) + '</span></td>';
-                }
-                /* Helper: wrap cell with numeric class if applicable */
-                function nc(v, extra) {
-                    var val = fv(v);
-                    var cls = isNum(v) ? ' class="tn-d-num"' : '';
-                    if (extra) cls = ' class="' + extra + '"';
-                    return '<td' + cls + '>' + val + '</td>';
+                    if (!val) return '<td class="col-thuong-cell"></td>';
+                    return '<td class="col-thuong-cell"><span class="thuong-val"><i class="fa-solid fa-trophy"></i> ' + esc(val) + '</span></td>';
                 }
 
                 bHtml += '<tr>' +
-                    '<td class="tn-d-stt">' + (idx + 1) + '</td>' +
-                    '<td class="tn-d-tn">' + esc(String(r[0] || '').trim()) + '</td>' +
-                    '<td>' + esc(String(r[1] || '').trim()) + '</td>' +
-                    '<td class="tn-d-hoten">' + esc(String(r[2] || '').trim()) + '</td>' +
-                    '<td>' + esc(String(r[3] || '').trim()) + '</td>' +
-                    '<td>' + esc(String(r[4] || '').trim()) + '</td>' +
-                    '<td>' + esc(String(r[5] || '').trim()) + '</td>' +
-                    nc(r[6]) +
-                    nc(r[7]) +
-                    nc(r[8]) +
-                    nc(r[9]) +
-                    nc(r[10]) +
-                    nc(r[11]) +
-                    tnRewardCell(r[12], 'tn-d-thuangr') +
-                    tnRewardCell(r[13], 'tn-d-thuangr') +
-                    nc(r[14], 'tn-d-lk') +
-                    nc(r[15], 'tn-d-lk') +
-                    nc(r[16], 'tn-d-lk') +
-                    tnRewardCell(r[17], 'tn-d-bkip') +
+                    '<td class="pst">' + (idx + 1) + '</td>' +
+                    '<td class="td-text col-name" style="min-width:50px">' + esc(String(r[0] || '').trim()) + '</td>' +
+                    '<td class="td-text col-code">' + esc(String(r[1] || '').trim()) + '</td>' +
+                    '<td class="td-text col-name">' + esc(String(r[2] || '').trim()) + '</td>' +
+                    '<td class="td-text col-code">' + esc(String(r[3] || '').trim()) + '</td>' +
+                    '<td class="td-num">' + fv(r[4]) + '</td>' +
+                    '<td class="td-num">' + fv(r[5]) + '</td>' +
+                    '<td class="td-num ct-dieukien">' + fv(r[6]) + '</td>' +
+                    '<td class="td-num ct-dieukien ct-dieukien-lv1">' + fv(r[7]) + '</td>' +
+                    '<td class="td-num ct-dieukien ct-dieukien-lv2">' + fv(r[8]) + '</td>' +
+                    '<td class="td-num ct-data">' + fv(r[9]) + '</td>' +
+                    '<td class="td-num ct-data ct-data-lv1">' + fv(r[10]) + '</td>' +
+                    '<td class="td-num ct-data ct-data-lv2">' + fv(r[11]) + '</td>' +
+                    tnRewardCell(r[12]) +
+                    tnRewardCell(r[13]) +
+                    '<td class="td-num ct-luyke">' + fv(r[14]) + '</td>' +
+                    '<td class="td-num ct-luyke ct-luyke-lv1">' + fv(r[15]) + '</td>' +
+                    '<td class="td-num ct-luyke ct-luyke-lv2">' + fv(r[16]) + '</td>' +
+                    tnRewardCell(r[17]) +
                     '</tr>';
             });
 
@@ -4268,7 +4247,7 @@
                 '</div>';
 
             ct.innerHTML = titleHtml +
-                '<div class="tn-wrap"><table class="tn-table">' +
+                '<div class="tn-wrap"><table class="po-pt tn-table">' +
                 colHtml +
                 '<thead>' + r1 + r2 + '</thead>' +
                 '<tbody>' + bHtml + '</tbody>' +
@@ -4668,6 +4647,10 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                     if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma kd|ma dai ly|hl chuc vu)/.test(key)) return 'col-code';
                     if (/(nhom kd|nhom|don vi|doi tvv)/.test(key)) return 'col-name';
                     if (/(chuc vu|cv$)/.test(key)) return 'col-code num-col';
+                    /* === TỔNG FYP/FYC NHÓM (trước tong chung) === */
+                    if (/(tong fyp nhom|tong fyc nhom)/.test(key)) return 'num-col col-fypnhom';
+                    /* === FYC riêng (bỏ tô màu) === */
+                    if (/fyc/.test(key) && !/fyp/.test(key)) return 'num-col col-fyc';
                     if (/(sl|so luong|tvv|count|tong|luot hd|so luong hd|thang lam viec|quy mo)/.test(key)) return 'col-count num-col';
                     /* === THƯỞNG === */
                     if (/(thuong|thu nhap|du kien|afyp|doanh so|tien|phat trien kinh doanh)/.test(key)) return 'num-col col-thuong';
@@ -4701,6 +4684,10 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                     if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma kd|ma dai ly|hl chuc vu)/.test(key)) return 'info';
                     if (/(nhom kd|nhom|don vi|doi tvv)/.test(key)) return 'info';
                     if (/(chuc vu|cv$)/.test(key)) return 'info';
+                    /* === TỔNG FYP/FYC NHÓM === */
+                    if (/(tong fyp nhom|tong fyc nhom)/.test(key)) return 'fypnhom';
+                    /* === FYC riêng (bỏ tô màu) === */
+                    if (/fyc/.test(key) && !/fyp/.test(key)) return 'fyc';
                     if (/(thuong|thu nhap|du kien|afyp|doanh so|tien|phat trien kinh doanh)/.test(key)) return 'thuong';
                     if (/(dieu kien|dat|chi tieu)/.test(key)) return 'dieukien';
                     if (/(tlht|ty le)/.test(key)) return 'percent';
@@ -4740,6 +4727,13 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                         if (/(stt|xep hang)/.test(key)) return 'td-num col-stt';
                         if (/(ho ten|ten ho|ten nhom|nhom tvv|ten tn|ten tvv|ten ns|ten cad|ten tv$|ten tvv$|^ten$|ten$|nhom kd|nhom|don vi|doi tvv)/.test(key)) return 'td-text col-name';
                         if (/(ma so|ma tn|m a|ma s|ma tvv|^ma$|^ms$|ma kd|ma dai ly|hl chuc vu|chuc vu|cv$)/.test(key)) return 'td-text col-code';
+                    }
+                    /* === TỔNG FYP/FYC NHÓM → hồng nhạt, trái, đậm === */
+                    if (/(tong fyp nhom|tong fyc nhom)/.test(key)) return 'td-text col-fypnhom-cell';
+                    /* === FYC riêng → bỏ tô màu === */
+                    if (/fyc/.test(key) && !/fyp/.test(key)) {
+                        var isNumFyc = /^-?\d+(?:[.,]\d+)?$/.test(String(displayVal).replace(/\s/g, ''));
+                        return isNumFyc ? 'td-num col-fyc-cell' : 'td-text col-fyc-cell';
                     }
                     /* === ĐẠT / CHƯA ĐẠT === */
                     if (rawVal === '10000001111') return 'td-num ach-cell';
@@ -4819,7 +4813,6 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                             c1++;
                             continue;
                         }
-
                         var spanTop = 1;
                         while (c1 + spanTop < dc) {
                             var nextTop = trimCell(top[c1 + spanTop]);
@@ -5019,6 +5012,11 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
                         if (/cell-percent/.test(cCls) && /^-/.test(String(displayVal).trim())) cCls += ' neg';
                         /* Policy columns 3+ get po-cc */
                         if (isPolicy && c >= infoColCount) cCls += ' po-cc';
+                        /* Code columns → không tô màu (sau khi thêm po-cc) */
+                        if (/col-code/.test(colCls)) {
+                            cCls = cCls.replace(/ct-\w+(-lv\d+)?/g, '');
+                            cCls = cCls.replace(/po-cc/g, '');
+                        }
                         b += '<td class="' + cCls + '">' + cellContent + '</td>';
                     }
                     b += '</tr>';
@@ -5129,9 +5127,13 @@ if (ok) { toast('Đã xóa', 'ok'); ccf(); await lfs(); }
             prefix: 'po', varName: 'poPage', containerId: 'view-policy', title: 'Chính Sách', badge: 'Chính sách', badgeIcon: 'fa-book', emptyTitle: 'Chưa có chính sách nào', emptyDesc: 'Nhấn icon <i class="fa-solid fa-user-shield" style="color:var(--td-accent)"></i> để quản trị.', useSheetLayout: false, filterFn: function(n) { return /^chính\s*sách/i.test(n); }
         });
 
+        var clbPage = createTDPage({
+            prefix: 'cb', varName: 'clbPage', containerId: 'view-clb', title: 'CLB Sao Việt', badge: 'CLB', badgeIcon: 'fa-star', emptyTitle: 'Chưa có chương trình CLB nào', emptyDesc: 'Nhấn icon <i class="fa-solid fa-user-shield" style="color:var(--td-accent)"></i> để quản trị.', useSheetLayout: false, filterFn: function(n) { return /CLB/i.test(n); }
+        });
+
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                [tdPage, poPage].forEach(function(pg) {
+                [tdPage, poPage, clbPage].forEach(function(pg) {
                     if (!pg) return;
                     ['PwMdl', 'CfmDel', 'Mdl', 'Popup'].forEach(function(s) {
                         var el = pg.gid(s);
